@@ -29,7 +29,7 @@ public class SignUp extends AppCompatActivity {
         password=findViewById(R.id.edtPassword);
         mSignup=findViewById(R.id.btnSignUp);
         FirebaseDatabase database=FirebaseDatabase.getInstance();
-        final DatabaseReference table_user=database.getReference("User").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        final DatabaseReference table_user=database.getReference("User");
         mSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,8 +45,9 @@ public class SignUp extends AppCompatActivity {
                         }
                         else{
                             mDialog.dismiss();
-                            User user=new User(name.getText().toString(),password.getText().toString(),FirebaseAuth.getInstance().getCurrentUser().getUid());
-                            table_user.setValue(user);
+                            User user=new User(name.getText().toString(),password.getText().toString());
+                            //table_user.setValue(user);
+                            table_user.child(phone.getText().toString()).setValue(user);
                             Toast.makeText(SignUp.this,"Sign Up Successfully",Toast.LENGTH_SHORT).show();
                             finish();
                         }

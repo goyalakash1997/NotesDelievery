@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.signin.SignIn;
 import com.google.firebase.auth.FirebaseAuth;
 
 import info.hoang8f.widget.FButton;
@@ -44,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }*/
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignUp = findViewById(R.id.btnSignUp);
         btnSignIn.setOnClickListener(new View.OnClickListener() {

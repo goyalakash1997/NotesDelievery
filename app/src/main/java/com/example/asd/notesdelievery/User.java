@@ -5,19 +5,13 @@ package com.example.asd.notesdelievery;
  */
 
 public class User {
-    private  String name,password,uid;
+    private  String name,password;
     public User(){
     }
-    public User(String name,String password,String uid){
+    public User(String name,String password){
         this.name=name;
         this.password=password;
-        this.uid=uid;
     }
-
-    public String getUid() {
-        return uid;
-    }
-
     public String getPassword() {
         return password;
     }
